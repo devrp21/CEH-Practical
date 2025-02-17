@@ -522,4 +522,4 @@ PreviousNext
 From <https://labclient.labondemand.com/Instructions/161723d5-b655-4ab1-83c4-b89be715534d?showWhenStarting=1> 
 
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/92446bc5-5e32-4cf7-a01f-8eaf5979dd23)
