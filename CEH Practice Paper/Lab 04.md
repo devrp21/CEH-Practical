@@ -974,4 +974,4 @@ Enumerate the machine at 10.10.1.22 using Enum4linux and find its Platform_ID.
 Question 4.8.3.3
 Enumerate the machine at 10.10.1.22 using Enum4linux and find its server type.
 0x84102f
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/b985a52c-9fb5-4dd8-9dfe-66f537d3879a)
