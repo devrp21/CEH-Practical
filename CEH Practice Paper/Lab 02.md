@@ -1328,3 +1328,4 @@ Question 2.9.6.1
 (Question 2.9.6.1) Use the OSINT Framework (https://osintframework.com) to explore footprinting categories and associated tools. Enter the complete website URL of the Domain Dossier tool, which generates reports from public records.
 https://centralops.net/co/DomainDossier.aspx
 
+![Uploading image.png…]()
