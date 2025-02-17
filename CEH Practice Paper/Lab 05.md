@@ -387,4 +387,4 @@ Scan web servers and application vulnerabilities for www.certifiedhacker.com usi
 From <https://labclient.labondemand.com/Instructions/b8523943-90cd-4081-90d6-14e9d6724580> 
 
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/d5fb581f-bfd7-488d-ab24-feafe1f7abb1)
