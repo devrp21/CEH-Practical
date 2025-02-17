@@ -1,0 +1,73 @@
+CEH Skill Check - Part IV
+Scenario
+You have been hired as a part of the Red Team at CEHORG, an IT and ITES organization that deals with advanced research and development in the field of information security. It has offices all over the country connected in real-time by its network infrastructure.
+Your organization is worried about rising cybersecurity incidents and has entrusted you with a comprehensive security audit of the complete infrastructure.
+CEHORG’s internal network consists of several subnets housing various organizational units like any large organization. The front office is connected to a separate subnet that connects to the company’s public-facing computers. The company has installed multiple kiosks to help customers understand their products and services. The front office also has Wi-Fi connectivity to cater to the users who carry their smartphones and laptops.
+The CEHORG’s internal network is made up of Militarized and Demilitarized zones. As a security precaution, and by design, all the internal resource zones are configured with different subnet IPs. The militarized zone houses the application servers that provide application frameworks for various departments. The Demilitarized Zone contains public-facing systems of the organization, such as web and mail servers. The headquarter’s network topology and protocols are replicated worldwide in all its satellite offices for easy communication with the headquarters.
+Description
+CEHv12 Skill Check is divided into four parts. All four parts represent a single target organization as described in the scenario. The objective of these skill checks is to apply learning from CEH (Certified Ethical Hacker) modules in a real-life scenario to solve challenges you will face in red team assignments in your job roles. The skill check will help you practice the skills acquired in the class and convert them into proficiency.
+Part 4 of CEH Skill Check covers Hacking Wireless Networks, Hacking Mobile Platforms, IoT and OT Hacking, Cloud Computing, and Cryptography modules. In this part, you must analyze wireless packet captures, use different attack vectors to exploit mobile devices, and audit IoT and OT systems/networks for known threats. You need to note all the information discovered in this part of the Skill Check.
+On the cyber range, you will have access to Ethical Hacker Workstations,* EH Workstation – 1* and EH Workstation – 2. EH Workstation – 1 is a Parrot Security machine and EH Workstation – 2 is a Windows 11 machine. You can switch to these machines from the Resources tab.
+The credentials to access EH Workstation – 1 (Parrot Security) machine are as below:
+Username: attacker Password: toor
+The credentials to access EH Workstation – 2 (Windows 11) are as below:
+Username: Admin Password: Pa$$w0rd
+The credentials to access OpenVAS on EH Workstation – 1 (Parrot Security) machine are as below:
+Username: admin Password: password
+Note: You can use username.txt and password.txt available on the Desktop of the EH Workstation – 1 (Parrot Security) machine for any credentials/password cracking attempt.
+
+Flags
+Challenge 1:
+The mobile device of an employee in CEHORG has been hacked by the hacker to perform DoS attack on one of the server in company network. You are assigned to analyse "Andro.pcapng" located in Documents directory of EH workstation-2 and identify the severity level of the attack. (Note: perform deep down Expert Info analysis). (Format: Aaaaaaa )
+Open in wireshark  analyze>expert info
+Warning
+Challenge 2:
+An ex-employee of CEHORG is suspected to be performing insider attack. You are assigned a task to attain KEYCODE-75 used in the employees' mobile phone. Note: use option p in PhoneSploit for next page. (Format: AAAAAAAAAA )
+Nmap -sC -sV 172.16.0.0/24
+172.16.0.21
+Go to phone sploit use"p" for next command and use "25" and see the codes name 
+APOSTROPHE  this is from net search https://www.temblast.com/ref/akeyscode.htm
+Challenge 3:
+An employee in CEHORG has secretly acquired Confidential access ID through an application from the company. He has saved this information on the Downloads folder of his Android mobile phone. You have been assigned a task as an ethical hacker to access the file and delete it covertly. Enter the account information present in the file. Note: Only provide the numeric values in the answer field. (Format: NNNNNNNN)
+Use shell of phone using 4 number and go to Download folder of phone and get the output
+80099889
+Challenge 4:
+An attacker has hacked one of the employees android device in CEHORG and initiated LOIC attack from the device. You are an ethical hacker who had obtained a screenshot of the attack using a background application. Obtain the screenshot of the attack using PhoneSploit from the attacked mobile device and determine the targeted machine IP along with send method. (Format: NNN.NN.N.NN/AAAA)
+172.16.0.11/HTTP
+This is in DCIM folder fetch folder by using phonesploit option 9 and fetch whole foolder.
+Challenge 5:
+An attacker installed a malicious mobile application 'AntiMalwarescanner.apk' on the victims android device which is located in EH workstation-2 documents folder. You are assigned a task to perform security audit on the mobile application and find out whether the application using permission to Read-call-logs. (Format: Aaa )
+Use sisik.eu for analyze the apk file
+Yes
+Challenge 6:
+CEHORG hosts multiple IOT devices and sensors to manage its supply chain fleet. You are assinged a task to examine the file "IOT Traffic.pcapng" located in the Home directory of the root user in the "EH Workstation - 1" machine. Analyze the packet and find the topic of the message sent to the sensor. (Format: Aaaaa*Aaaaa)
+Go to wireshark and filter packet by MQTT and se message packet and you will get the message
+
+Fleet_Count
+Challenge 7:
+CEHORG hosts multiple IOT devices and network sensors to manage its IT-department. You are assigned a task to examine the file "NetworkNS_Traffic.pcapng" located in the Documents folder of the user in the "EH Workstation - 2" machine. Analyze the packet and find the alert message sent to the sensor. (Format: Aaaa Aaa*aa *aaaa)
+Same open wireshark and filter mqtt and you get publish message packet and do thing.
+
+Data Bre@ch @lert
+Challenge 8:
+You have received a folder named "Archive" from a vendor. You suspect that someone might have tampered with the files during transmission. The Original hashes of the files have been sent by the sender separately and are stored in a file named FileHashes.txt stored in the Document folder in the "EH Workstation – 2" machine. Your task is to check the integrity of the files by comparing the MD5 hashes. Compare the hash values and determine the file name that has been tampered with. Note: Exclude the file extension in the answer field. The answer is case-sensitive. (Format: Aaaaaa)
+Open the MD5 calculator and put file and get hash compare it with filehashes.txt's hash and you get the difference
+Quotes
+Challenge 9:
+An attacker has intruded into the CEHORG network with malicious intent. He has identified a vulnerability in a machine. He has encoded the machine's IP address and left it in the database. While auditing the database, the encoded file was identified by the database admin. Decode the EncodedFile.txt file in the Document folder in the "EH Workstation – 2" machine and enter the IP address as the answer. (Hint: Password to decode the file is Pa$$w0rd). (Format: NN.NN.NN.NN)
+Open bctextencoder and decrypt file by password and you get IP.
+10.10.10.31
+Challenge 10:
+The Access code of an employee was stolen from the CEHORG database. The attacker has encrypted the file using the Advance Encryption Package. You have been assigned a task to decrypt the file; the organization has retained the cipher file ""AccessCode.docx.aes"" in the Document folder in the ""EH Workstation – 2"" machine. Determine the access code by decrypting the file. Hint: Use ""qwerty"" as the decryption password. Note: Advanced Encryption Package is available at E:\CEH-Tools\CEHv12 Module 20 Cryptography\Cryptography Tools. (Format: AAA*AAA*NNNN)
+Use advanced encryption package and you get the decrypted document
+ECC-CSC-2006
+Challenge 11:
+A VeraCrypt volume file "secret" is stored on the Document folder in the "EH Workstation – 2" machine. You are an ethical hacker working with CEHORG; you have been tasked to decrypt the encrypted volume and determine the number of files stored in the volume. (Hint: Password: test). (Format: N)
+Use vercypt to mount file and decrypt file
+6
+Challenge 12:
+An attacker had sent a file cryt-128-06encr.hex containing ransom file password, which is located in documents folder of EH-workstation-2. You are assigned a task to decrypt the file using cryp tool. Perform cryptanalysis, Identify the algorithm used for file encryption and hidden text. Note: check filename for key length and hex characters. (Format: Aaaaaaa/**aa**aA*a)
+Twofish/@!ph@|tE*t
+
+From <https://labclient.labondemand.com/Instructions/1fe48d1d-da2a-4270-b6d7-acd57bc74a01?showWhenStarting=1> 
+
