@@ -2287,4 +2287,4 @@ If a User Account Control pop-up appears, click Yes.
 From <https://labclient.labondemand.com/Instructions/afe1adc9-66ec-4ec1-b5db-803b40b09218?showWhenStarting=1> 
 
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/76ab4b81-3157-4cba-b37f-ed82f2278376)
