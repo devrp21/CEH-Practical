@@ -1,0 +1,95 @@
+CEH Skill Check - Part II
+Scenario
+You have been hired as a part of the Red Team at CEHORG, an IT and ITES organization that deals with advanced research and development in the field of information security. It has offices all over the country connected in real-time by its network infrastructure.
+Your organization is worried about rising cybersecurity incidents and has entrusted you with a comprehensive security audit of the complete infrastructure.
+CEHORG’s internal network consists of several subnets housing various organizational units like any large organization. The front office is connected to a separate subnet that connects to the company’s public-facing computers. The company has installed multiple kiosks to help customers understand their products and services. The front office also has Wi-Fi connectivity to cater to the users who carry their smartphones and laptops.
+The CEHORG’s internal network is made up of Militarized and Demilitarized zones. As a security precaution, and by design, all the internal resource zones are configured with different subnet IPs. The militarized zone houses the application servers that provide application frameworks for various departments. The Demilitarized Zone contains public-facing systems of the organization, such as web and mail servers. The headquarter’s network topology and protocols are replicated worldwide in all its satellite offices for easy communication with the headquarters.
+Description
+CEHv12 Skill Check is divided into four parts. All four parts represent a single target organization as described in the scenario. The objective of these skill checks is to apply learning from CEH (Certified Ethical Hacker) modules in a real-life scenario to solve challenges you will face in red team assignments in your job roles. The skill check will help you practice the skills acquired in the class and convert them into proficiency.
+Part 2 of CEH Skill Check covers System Hacking, Malware Threats, Sniffing, Social Engineering, and Denial-of-Service modules. In this part, you must exploit vulnerabilities identified in the last part and use various network/system/human exploitation techniques to gain access to the target’s systems. You have to perform lateral and vertical privilege escalations and install malicious apps and utilities to maintain access and clear logs to avoid detection. You will need to create and use malicious applications against the target and will also be required to analyze any malware discovered on any of the targets. You need to note all the information discovered in this part of the Skill Check and proceed to the subsequent phases of the ethical hacking cycle in the next part of the Skill Check.
+On the cyber range, you will have access to Ethical Hacker Workstations,* EH Workstation – 1* and EH Workstation – 2. EH Workstation – 1 is a Parrot Security machine and EH Workstation – 2 is a Windows 11 machine. You can switch to these machines from the Resources tab.
+The credentials to access EH Workstation – 1 (Parrot Security) machine are as below:
+Username: attacker Password: toor
+The credentials to access EH Workstation – 2 (Windows 11) are as below:
+Username: Admin Password: Pa$$w0rd
+The credentials to access OpenVAS on EH Workstation – 1 (Parrot Security) machine are as below:
+Username: admin Password: password
+Note: You can use username.txt and password.txt available on the Desktop of the EH Workstation – 1 (Parrot Security) machine for any credentials/password cracking attempt.
+
+Flags
+Challenge 1:
+You are assigned a task to crack the NTLM password hashes captured by the internal security team. The password hash has been stored in the Documents folder of the Parrot Security console machine. What is the password of user James? (Format: aaaaaa)
+John --format=NT /hashes.txt
+qwerty
+Correct answer.
+Challenge 2:
+You are assigned a task to crack the NTLM password hashes captured by the internal security team. The password hash has been stored in the Documents folder of the Parrot Security console machine. What is the password of user Jones? (Format: NNNNNNNN)
+12345678
+Correct answer.
+Challenge 3:
+You have been given a task to audit the passwords of a server present in CEHORG network. Find out the password of the user Adam and submit it. (Note: Use Administrator/ CSCPa$$ when asked for credentials). (Format: aaaaaaaaN)
+ password4
+Search online password cracker
+Challenge 4:
+An employee in your organization is suspected of sending important information to an accomplice outside the organization. The incident response team has intercepted some files from the employee's system that they believe have hidden information. You are asked to investigate a file named Confidential.txt and extract hidden information. Find out the information hidden in the file. Note: The Confidential.txt file is located at C:\Users\Admin\Documents in EH Workstation – 2 machine. (Format: Aaaaa/AaaaaaaNNNNN)
+Snow -c file
+James/Hopkins13456
+Correct answer.
+Challenge 5:
+The incident response team has intercepted an image file from a communication that is supposed to have just text. You are asked to investigate the file and check if it contains any hidden information. Find out the information hidden in the file. Note: The vacation.bmp file is located at C:\Users\Admin\Documents in EH Workstation – 2 machine. (Format: AAANNNNNNN)
+USD1234567
+Stegoimage mathi karvu 
+Correct answer.
+Challenge 6:
+A disgruntled employee in CEHORG has used the Covert_TCP utility to share a secret message with another user in the CEHORG network. Covert_TCP manipulates the TCP/IP header of the data packets to send a file one byte at a time from any host to a destination. It can be used to hide the data inside IP header fields. The employee used the IP ID field to hide the message. The network capture file “Capture.pcapng” has been retained in the “C:\Users\Administrator\Documents” directory of the “EH Workstation – 2” machine. Analyze the session to get the message that was transmitted. (Format: AN*A*AN)
+R3@D_M3
+Wireshar ip.adr= 10.10.10.. && ip.dst== 172…..  And one by one findIpv4 and ipid section
+Correct answer.
+Challenge 7:
+You are a malware analyst working for CEHORG. During your assessment within your organisation's network, you found a malware face.exe. The malware is extracted and placed at C:\Users\Admin\Documents in the EH Workstation – 2 machine. Analyze the malware and find out the File pos for KERNEL32.dll text. (Hint: exclude zeros.) (Format: AANN)
+DC14
+From DIE in Strings tab
+
+Challenge 8:
+Analyze an ELF executable (Sample-ELF) file placed at C:\Users\Admin\Documents in the EH Workstation – 2 machines to determine the CPU Architecture it was built for. (Format: AAAAANN)
+AARCH64
+One of the tool you search
+Correct answer.
+Challenge 9:
+CEHORG has assigned you with analysing the snapshot of the operating system registry and perform the further steps as part of dynamic analysis and find out the whether the driver packages registry is changed. Give your response as Yes/No. (Format: Aaa)
+Yes
+Correct answer.
+Challenge 10:
+Perform windows service monitoring and find out the service type associated with display name "afunix". (Format: aaaaaa)
+Driver
+Srvman.exe win servie monitor
+Correct answer.
+Challenge 11:
+Use Yersinia on the “EH Workstation – 1” (Parrot Security) machine to perform the DHCP starvation attack. Analyze the network traffic generated during the attack and find the Transaction ID of the DHCP Discover packets. (Format: NaNNNaNNNN)
+Yersinia 
+0x643c9869
+Challenge 12:
+CEHORG suspects a possible sniffing attack on a machine in its network. The organization has retained the network traffic data for the session and stored it in the Documents folder in EH Workstation – 2 (Windows 11) machine as sniffsession.pcap. You have been assigned a task to analyze and find out the protocol used for sniffing on its network. (Format: AAA)
+Arp
+Filter it to wireshark arp
+Challenge 13:
+As an ethical hacker, you are tasked to analyze the traffic capture file webtraffic.pcapng. Find out the packet's id that uses ICMP protocol to communicate. Note: The webtraffic.pcapng file is located at C:\Users\Administrator\Documents\ in the Documents folder on EH Workstation – 2 (Windows 11) machine. (Format: NaaaNN)
+0xfc83
+Wireshark icmp in Info tab
+Challenge 14:
+CEHORG has found that one of its web application movies.cehorg.com running on its network is leaking credentials in plain text. You have been assigned a task of analysing the movies.pcap file and find out the leaked credentials. Note: The movies.pcapng file is located at C:\Users\Administrator\Documents\ in the Documents folder on EH Workstation – 2 (Windows 11) machine. Make a note of the credentials obtained in this flag, it will be used in the Part 3 of CEH Skill Check. (Format: Aaaaa/aaaaaaa)
+Wireshark http.request.method ==POST
+Jason/welcome
+Challenge 15:
+An attacker has created a custom UDP packet and sent it to one of the machines in the CEHORG. You have been given a task to study the ""CustomUDP.pcapng"" file and find the data size of the UDP packet (in bytes). Note: The CustomUDP.pcapng file is located at C:\Users\Administrator\Documents\ in the Documents folder on EH Workstation – 2 (Windows 11) machine. (Format: NNN)
+600
+Udp wireshark
+Challenge 16:
+A denial-of-service attack has been launched on a target machine in the CEHORG network. A network session file "DoS.pcapng" has been captured and stored in the Documents folder of the EH Workstation - 2 machine. Find the IP address of the attacker's machine. (Format: NNN.NNN.N.NN)
+192.168.0.51
+wirreshark
+Challenge 17:
+CEHORG hosts a datacenter for its bussiness clients. While analyzing the network traffic it was observed that there was a huge surge of incoming traffic from multiple sources. You are given a task to analyze and study the DDoS.pcap file. The captured network session (DDoS.pcapng) is stored in the Documents folder of the EH Workstation -2 machine. Determine the number of machines that were used to initiate the attack. (Format: N)
+3
+
+From <https://labclient.labondemand.com/Instructions/666d4405-3ac4-4641-9c36-aca311c2b630> 
